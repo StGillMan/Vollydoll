@@ -1,6 +1,13 @@
 import maya.cmds as cmds
-cmds.setAttr
+
 def checkFaces(obj=None):
+    """
+    This function check inputs
+    adn return dict of object name
+    and list of his non quad faces
+    :param obj: 'list' poly objects
+    :return: 'dict'
+    """
     returnDict = {}
     if obj:
         if isinstance(obj, list):

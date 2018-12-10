@@ -1,17 +1,25 @@
 import maya.cmds as cmds
-
+import inPoly
+import flat
 def checkStars(obj=None):
+    """
+        This function check inputs
+        adn return dict of object name
+        and list of his not relevant edges
+        :param obj: 'list' poly objects
+        :return: 'dict'
+        """
     returnDict = {}
     
     if obj:
-        if checkInputPoly(obj):
+        if inPoly.checkInputPoly(obj):
             for object in obj:
                 selectEdge = []
                 allVertex = cmds.polyListComponentConversion(object, tv=True)
-                flatVertex = flattenList(allVertex)
+                flatVertex = flat.flattenList(allVertex)
                 for vertex in flatVertex:
                     edgeOnVertex = cmds.polyListComponentConversion(vertex, te=True)
-                    flatEdge = flattenList(edgeOnVertex)
+                    flatEdge = flat.flattenList(edgeOnVertex)
                     if len(flatEdge) > 5:
                         for edge in flatEdge:
                             selectEdge.append(edge)
