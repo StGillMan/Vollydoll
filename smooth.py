@@ -5,6 +5,7 @@ def getSmooth(obj=None, fix=True):
     """
     This function check input
     and return dict of objects and his smooth level
+    Also it's chenge smooth lvl to 1
     :param obj: 'list'
     :param fix: 'bool'
     :return: 'dict'
