@@ -4,8 +4,7 @@ import inPoly
 def getSmooth(obj=None, fix=True):
     """
     This function check input
-    and return true if smooth mode is 3 and 2,
-    or false if it's 1
+    and return dict of objects and his smooth level
     :param obj: 'list'
     :param fix: 'bool'
     :return: 'dict'
