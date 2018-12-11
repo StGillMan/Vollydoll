@@ -1,6 +1,7 @@
 import maya.cmds as cmds
 import inPoly
 import flat
+
 def checkStars(obj=None):
     """
         This function check inputs
