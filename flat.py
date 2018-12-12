@@ -1,19 +1,18 @@
 import maya.cmds as cmds
 
-def flattenList(list=None):
-    """
-    This function processes the input list
-    and returns the expanded list of objects.
-    :param list: 'list' anything selected objects
-    :return: 'list'
+
+def flattenList(obj=None):
+    """Decomposes the components
+
+    :param obj: 'list' objects or components
+    :return: 'list' list of decomposes items
     """
     flattenList = []
-    
-    if list:
-        for l in list:
-            listFlat = cmds.ls(l, fl=True)
-            for each in listFlat:
-                flattenList.append(each)
-    
-    return flattenList
 
+    if obj:
+        for l in obj:
+            listFlat = cmds.ls(l, fl=True)
+            for item in listFlat:
+                flattenList.append(item)
+
+    return flattenList
